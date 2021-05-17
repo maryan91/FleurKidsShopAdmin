@@ -11,7 +11,7 @@
     android:theme="@style/Theme.FleurKidsShopAdmin">
     <activity
       android:label="@string/app_name"
-      android:name=".MainActivity"
+      android:name=".presentation.MainActivity"
       android:theme="@style/Theme.FleurKidsShopAdmin.NoActionBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
