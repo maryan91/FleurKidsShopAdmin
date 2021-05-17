@@ -21,15 +21,24 @@ object ProductEditor {
                 customSalePrice = customSalePrice)
     }
 
-    fun calculateDeliveryCost(purchaseCost: Double, orderPurchaseCost: Double, orderDeliveryCost: Double): Double {
-        return purchaseCost / orderPurchaseCost * orderDeliveryCost
-    }
+    fun calculateDeliveryCost(purchaseCost: Double, orderPurchaseCost: Double, orderDeliveryCost: Double) =
+            purchaseCost / orderPurchaseCost * orderDeliveryCost
 
-    fun calculateFinalCost(purchaseCost: Double, deliveryCost: Double): Double {
-        return purchaseCost + deliveryCost
-    }
+    fun calculateFinalCost(purchaseCost: Double, deliveryCost: Double) =
+            purchaseCost + deliveryCost
 
-    fun calculateSalePrice(finalCost: Double, earn: Double): Double {
-        return finalCost + finalCost * earn
-    }
+    fun calculateSalePrice(finalCost: Double, earn: Double) = finalCost + finalCost * earn
+
+    fun recalculateByCurrency(product: Product, currency: Double) = Product(
+            id = product.id,
+            shopOrderId = product.shopOrderId,
+            name = product.name,
+            amount = product.amount,
+            purchaseCost = product.purchaseCost.times(currency),
+            deliveryCost = product.deliveryCost.times(currency),
+            finalCost = product.finalCost.times(currency),
+            earn = product.earn,
+            calculatedSalePrice = calculateSalePrice(product.finalCost.times(currency), product.earn),
+            customSalePrice = product.customSalePrice?.times(currency)
+    )
 }
