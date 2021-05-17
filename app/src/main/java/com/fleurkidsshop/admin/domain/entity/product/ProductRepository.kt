@@ -3,7 +3,7 @@ package com.fleurkidsshop.admin.domain.entity.product
 import android.arch.lifecycle.LiveData
 
 interface ProductRepository {
-    fun get(): LiveData<List<Product>>
-    fun get(shopOrderId: String): LiveData<List<Product>>
-    fun save(data: Product):LiveData<Boolean>
+    fun getAll(): LiveData<List<Product>>
+    fun get(vararg shopOrderId: String): LiveData<List<Product>>
+    fun save(vararg data: Product):LiveData<Boolean>
 }

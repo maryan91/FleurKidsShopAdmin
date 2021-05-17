@@ -3,7 +3,7 @@ package com.fleurkidsshop.admin.domain.entity.currency
 import android.arch.lifecycle.LiveData
 
 interface CurrencyRepository {
-    fun get(): LiveData<List<Currency>>
-    fun get(id: String): LiveData<Currency>
-    fun save(data: Currency): LiveData<Boolean>
+    fun getAll(): LiveData<List<Currency>>
+    fun get(vararg id: String): LiveData<List<Currency>>
+    fun save(vararg data: Currency): LiveData<Boolean>
 }

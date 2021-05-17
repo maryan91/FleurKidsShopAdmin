@@ -9,12 +9,12 @@ object ShopOrderEditor {
                 date = date,
                 purchaseCost = purchaseCost,
                 deliveryCost = deliveryCost,
-                finalCost = calculatefinaleCost(purchaseCost, deliveryCost),
+                finalCost = calculateFinalCost(purchaseCost, deliveryCost),
                 currencyId = currencyId
         )
     }
 
-    fun calculatefinaleCost(purchaseCost: Double, deliveryCost: Double): Double {
+    fun calculateFinalCost(purchaseCost: Double, deliveryCost: Double): Double {
         return purchaseCost + deliveryCost
     }
 }

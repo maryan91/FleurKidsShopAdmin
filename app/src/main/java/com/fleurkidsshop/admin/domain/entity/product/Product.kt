@@ -1,7 +1,7 @@
 package com.fleurkidsshop.admin.domain.entity.product
 
-data class Product(val id:String, // unique product id
-                   val shopOrderId: String, // unique shopOrder id
+data class Product(val id:String, // unique product id (primary key)
+                   val shopOrderId: String, // unique shopOrder id (foreign key)
                    val name: String, // name of the product
                    val amount: Int, // count of items inside the product
                    val purchaseCost: Double, // original cost of product
